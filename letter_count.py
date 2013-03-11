@@ -1,13 +1,13 @@
 from sys import argv
+import string
 
 script, filename = argv
 
-print "Type the filename:"
-file_name = raw_input("> ")
+open_file = open(filename).read()
 
-open_file = open(file_name).read()
+az = string.lowercase[:27]
 
-print open_file
+dictionary = dict.fromkeys(az, 0)
 
      
 #new_file = open open_file.read())
@@ -15,9 +15,16 @@ print open_file
 # making file lowercase
 lowercase_file = open_file.lower()
 
-for char in new_file
 
+for char in lowercase_file:
+	if char in dictionary:
+		dictionary[char] += 1
+		break
 
+sorted_list = [x for x in dictionary.iteritems()]
+sorted_list.sort(key=lambda x: x[0])
+
+print "\n".join(str(char[1]) for char in sorted_list)
 #edited_text = text_editor(open_file)
 
 #a_count = 0
